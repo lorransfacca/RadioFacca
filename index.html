@@ -1,0 +1,373 @@
+<script>
+	import  index from 'login.html';
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Rádio Facca - Só toca Musica Top!</title>
+	
+
+<style>
+
+body
+{
+	background: #08070d;
+
+}
+	    /* Colocando O FORMULARIO ALINHADA
+	Transforma em BLOCO
+*/
+label 
+    {
+	    display: block;
+	    float: left;
+    }
+
+/*/Define o tamanho, impedindo que fiquem desalinhados*/
+
+label, input, script
+{
+	width:115px;
+	margin: 3px 0;
+	align-items:block;
+}
+
+/* AUMENTA A largura do INPUT*/
+input 
+{
+	width:100px;
+	background: #d2691e;
+	color: yellow;
+	border: brown solid 1px;
+	cursor: pointer;
+}
+
+/*Define uma largura para a parte subliada de fora*/
+fieldset 
+{
+	background: #d2691e;
+	width:300px;
+	float: right;
+	border-color: brown;
+}
+#nome_musica
+{
+	display: none;
+}
+div 
+{
+	width: 300px;
+	display: inline-block
+}
+
+button 
+{
+	background: brown;
+	border-color: brown;
+}
+/*esconder discord da pagina*/
+iframe
+{
+    display: none;
+}
+
+a
+{
+    text-decoration: none;
+    color:yellow;
+}
+a:link{
+color:yellow
+}
+
+a:visited{
+color:yellow;
+}
+
+a:hover{
+color:yellow;
+}
+
+a:active{
+color:yellow;
+}
+
+.alternativo:hover .ouvintes 
+{
+    display: block;
+}
+
+/*rodapé*/
+footer
+{
+	color: yellow;
+	position: absolute;
+	bottom: 30px;
+	width: 99%;
+}
+h1
+{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	color: yellow;
+	font-size:10pt;
+	bottom: 20px;
+	width: 99%;
+	animation: animateText 2s ease-in-out infinite;
+    animation-delay: -1s;	
+}
+@keyframes animateText
+    {
+        0%,50%
+        {
+            color: gray;
+            text-shadow: none;
+        }
+        50.1%,100%
+        {
+            color: yellow;
+            text-shadow: 0 0 5px yellow,
+                        0 0 15px yellow;
+        }
+    }
+
+h2
+{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	color: yellow;
+	font-size:10pt;
+	bottom: 0px;
+	width: 99%;
+}
+h3
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+h4
+{
+    width:390px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: red;
+	font-size:50pt;background: black;
+    border: solid 10px gray;
+	animation: animateTexte 2s ease-in-out infinite;
+    animation-delay: -1s;
+}
+@keyframes animateTexte
+    {
+        0%,50%
+        {
+            color: gray;
+            text-shadow: none;
+        }
+        50.1%,100%
+        {
+            color: red;
+            text-shadow: 0 0 5px red,
+                        0 0 15px red;
+        }
+    }
+
+#name
+{
+	background: #d2691e;
+	color: yellow;
+	border: brown solid 1px;
+	cursor: pointer;
+}
+b
+{
+	cursor: default;
+}
+</style>
+
+<script>/*funcionamento do radio*/
+	function pega_tempo(){
+	alert("Duração da faixa: "+document.getElementById("demo").duration);
+	} 
+</script>
+
+<script>/*mostrando o ano do site*/
+	let data=new Date();
+	let dia=data.getDate();
+	let mes=data.getMonth()+1;
+	let ano=data.getFullYear();
+</script>
+</head>
+
+<body>
+	<center>
+		<h4>NO AR</h4>
+	</center> 
+
+	<nav class="menu">
+        <FONT COLOR="yellow">
+            <a href="https://lorransfacca.github.io/RadioFacca/"title="home">Home /</a><!-- Trocar de link -->
+            <a href="equipes.html"title="equipes">Equipe /</a>
+			<a href="equipenova.html"title="novas equipes">Novas Equipes /</a>
+            <a href="programas.html"title="programas">Programação /</a>
+            <a href="contatos.html"title="contatos">Contato</a>
+        </FONT>        
+   </nav>
+   
+	<iframe src="https://discord.com/widget?id=872488857248104529&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+	
+		
+		<fieldset>
+			<FONT COLOR="yellow">
+
+			    <label for="nota1"><img src="imgens/mic.svg" alt=""height="20px" width="20px">Locutor(a):</label>
+				 
+				<select id="name">
+					<option value="lista"></option>
+					<option value="facca">Lorrans Facca</option>
+				</select>
+				
+                <br/><br/>
+				<label for="nota3"><img src="imgens/users.svg" alt=""height="20px" width="20px">Ouvintes: </label>
+				<b id="u_online_ativos"></b>
+				
+			    
+			    <br/><br/>
+			
+			    <label for="nota3"><img src="imgens/user.svg" alt=""height="20px" width="20px">Pedir Musica: </label>
+			    <input type="text" id="inputMusica" name="$musica"><button style="margin:4px;"><img src="imgens/music.svg" alt=""height="20px" width="20px"></button><!--fazer unico buttonpara enviar uma musica de ouvintes*-->
+				<br/><br/>
+
+				<label for="nota3"><img src="imgens/kisspng-computer-icons-chatbot-world-wide-web-internet-sca-robots-icons-3-71-free-vector-icons-page-2-5b6c7da9379822.1250886115338367132277.png" alt=""height="20px" width="20px"></span>Bot:</label>
+			    Dj Pixel
+				<br/><br/>
+            </FONT>
+
+			<center>
+				<div class="container text-center">
+					<audio id="audio">
+						
+					</audio>   
+					<div>
+						<button href="#"onclick="play()"><img src="imgens/play.svg" alt="play"height="20px" width="20px"></button>
+					    <button href="#"onclick="pause()"><img src="imgens/pause.svg" alt="pausar"height="20px" width="20px"></button>
+					    <button href="#" onclick="aumentar_volume()"><img src="imgens/volume-high.svg" alt="Aumentar"height="20px" width="20px"></button>
+						<button href="#" onclick="diminuir_volume()"><img src="imgens/volume-low.svg" alt="Baixar"height="20px" width="20px"></button>
+						<button href="#"onclick="play()"><img src="imgens/previous.svg" alt="volta"height="20px" width="20px"></button>
+						<button href="#"onclick="play()"><img src="imgens/next.svg" alt="proxima"height="20px" width="20px"></button>
+					</div>
+					<div id="nome_musica"></div>
+					
+				</div>
+			</center>
+		
+		</fieldset>
+		<center>
+			<footer><img class="selo" src="https://lh3.googleusercontent.com/-1ILjd9EYjZU/TpCC5o4AyZI/AAAAAAAAAXM/Lvi8t6ZllX4/s100/DH.png" alt="https://lh3.googleusercontent.com/-1ILjd9EYjZU/TpCC5o4AyZI/AAAAAAAAAXM/Lvi8t6ZllX4/s100/DH.png"><h3>© RadioFacca 2017  -  <script>document.write( ano + "<br>");</script></h3></footer>
+			<h1 class="align-center">Rádio Facca - Só toca Musica Top! - Todos os Direitos Reservados</h1><br>
+			<h2 class="align-center">Desenvolvido por Lorrans Facca.</h2>
+		</center>
+</body>
+<script>/*aumentar e diminui o radio*/
+	audio = document.getElementById('audio');
+	function aumentar_volume(){
+		if(audio.volume < 1) audio.volume += 0.1;
+	}
+
+	function diminuir_volume(){
+		if(audio.volume > 0) audio.volume -= 0.1;
+	}
+
+</script>
+<script>/*trocador estilos de mudicas*/
+	let i = 0;
+	let musicas = 	[
+						{ mp3:'https://live.hunter.fm/pop_normal' , ogg:'https://live.hunter.fm/pop_normal' , titulo:'Pop'},
+						{ mp3:'https://live.hunter.fm/sertanejo_normal', mp3:'https://live.hunter.fm/sertanejo_normal' , titulo:'Sertanejo'},
+						{ mp3:'https://live.hunter.fm/pisadinha_normal' ,mp3:'https://live.hunter.fm/pisadinha_normal' , titulo:'Pisadinha'},
+						{ mp3:'https://live.hunter.fm/rock_normal', mp3:'https://live.hunter.fm/rock_normal' , titulo:'Rock'},
+					]; 
+	audio = document.getElementById('audio');
+	
+
+	audio.addEventListener('canplay', play_evento , false);
+	audio.addEventListener('timeupdate', atualizar , false);
+	audio.addEventListener('ended', proxima , false);
+
+	function play(){
+		audio.play();
+	}
+
+	function pause(){
+		audio.pause();
+	}
+
+	function play(){
+		proxima();
+	}
+
+	function proxima(){
+		audio.pause();
+		audio.currentTime = 0;
+	}
+
+	function play_evento(){
+		document.getElementById('tempo_atual').innerHTML = secToStr( audio.currentTime) ;
+		document.getElementById('tempo_total').innerHTML = secToStr( audio.duration );
+
+		document.getElementById('barra_progresso').max = audio.duration;
+		document.getElementById('barra_progresso').value = audio.currentTime;
+	}
+
+	function atualizar(){
+		document.getElementById('tempo_atual').innerHTML = secToStr( audio.currentTime);
+		document.getElementById('barra_progresso').value = audio.currentTime;
+	}
+
+	function proxima(){
+		if(audio.canPlayType("audio/mp3") != ''){
+			audio.src = musicas[i].mp3;
+		}else{
+			audio.src = musicas[i].ogg;
+		}
+		document.getElementById('nome_musica').innerHTML = musicas[i].titulo;
+		audio.play();
+
+		i++;
+		if( i >= musicas.length ) i = 0;
+	}
+
+	function secToStr( sec_num ) {
+		sec_num = Math.floor( sec_num );
+		let horas   = Math.floor(sec_num / 3600);
+		let minutos = Math.floor((sec_num - (horas * 3600)) / 60);
+		let segundos = sec_num - (horas * 3600) - (minutos * 60);
+
+		if (horas   < 10) {horas   = "0"+horas;}
+		if (minutos < 10) {minutos = "0"+minutos;}
+		if (segundos < 10) {segundos = "0"+segundos;}
+		let tempo    = horas+':'+minutos+':'+segundos;
+		return tempo;
+	}
+</script>
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script> <!--contador de ouvintes-->
+<script type="text/javascript" src="https://l2.io/ip.js?var=myip"></script>
+<script>
+    let site_nome = "radiofacca";
+    let myip;
+    let ip = myip;
+    let f_db = new Firebase("https://cliqueslinks.firebaseio.com/"+site_nome+"/");
+    let usuario_db = f_db.push();
+    let db_presensa = new Firebase("https://cliqueslinks.firebaseio.com/.info/connected/");
+    db_presensa.on("value", function (snap) {
+        if (snap.val()) {
+            usuario_db.onDisconnect().remove();
+            usuario_db.set(""+ip+"");
+        }
+    });
+    f_db.on("value", function (snap) {
+        document.getElementById("u_online_ativos").innerHTML = snap.numChildren()
+    });
+</script>
+</html>

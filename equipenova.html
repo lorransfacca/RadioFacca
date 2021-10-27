@@ -1,0 +1,121 @@
+<script>
+    document.getElementById('mensagem-sucesso').onclick = function(){
+    swal('Boa!', 'Seu Formulario Enviado com Sucesso!', 'success')
+    };
+</script>
+
+<style>
+    body
+    {
+        background: #08070d;
+    }
+
+    label{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align:center;
+        font-size: 15px;
+        color:yellow;
+    }
+
+    button{
+        border:2px solid yellow;
+        color:yellow;
+        border-radius:4px;
+        display:inline-block;
+        cursor:pointer;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:13px;
+        padding:6px 10px;
+        text-decoration:none;
+        background-color: green;
+    }
+
+    a{
+        border:2px solid yellow;
+        color:yellow;
+        border-radius:4px;
+        display:inline-block;
+        cursor:pointer;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:13px;
+        padding:6px 10px;
+        text-decoration:none;
+    }
+
+    section{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:15px;
+        color: yellow;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        margin: 30px;
+    }
+
+    p strong{
+    animation: animateText 2s ease-in-out infinite;
+    animation-delay: -1s;	
+    }
+    @keyframes animateText
+    {
+        0%,50%
+        {
+            color: gray;
+            text-shadow: none;
+        }
+        50.1%,100%
+        {
+            color: yellow;
+            text-shadow: 0 0 5px yellow,
+                        0 0 15px yellow;
+        }
+    }
+
+</style>
+
+<section>
+            
+    <div class="form"><p><strong>Para entrar na Equipe se Cadastre!</strong></p>
+     
+            <form action="https://api.staticforms.xyz/submit" method="POST" class="card">
+                <input type="hidden" name="accessKey" value="e6f1bc2b-1259-436e-911e-579510b8400e">
+                <input type="hidden" name="redirectTo" value="https://lorransfacca.github.io/RadioFacca/">
+
+                <label for="inputNome">Nome:</label>
+                <br>
+                <input type="text" id="inputNome" name="$nome">
+                <br>
+                <span></span>
+            
+                <label for="inputTelefone">Telefone:</label>
+                <br>
+                <input type="text" id="inputTelefone" name="$telefone">
+                <br>
+                <span></span>
+
+                <label for="inputeEndereço">Endereço:</label>
+                <br>
+                <input type="text" id="inputEndereço" name="$endereço">
+                <br>
+                <span></span>
+
+                <label for="inputEmail">Email:</label>
+                <br>
+                <input type="text" id="inputEmail" name="$email">
+                <br>
+                <span></span>
+
+                <label for="textAreaInformações">Mais informações:</label>
+                <br>
+                <textarea name="$Informações" id="textAreaInformações" cols="50" rows="10"></textarea>
+                <br>
+                <span></span>
+                <br>
+                <button id="mensagem-sucesso" href="equipenova.html">Enviar</button>
+
+                <a href="index.html">Home</a>
+                <br>
+                <br>
+            </form>
+    </div>
+</section>
